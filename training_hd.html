@@ -40,5 +40,91 @@
             <dd>순서에 영향을 받지 않는 목록을 이야기 합니다.</dd>
         </dl>
      
+
+        <!-- strong, em <> b, i-->
+        <!--스트롱이랑볼드체랑 같고 em이랑 이텔릭체랑 보기에는 같음 기능은 틀림-->
+        <strong>강한 강조</strong>
+        <em>강조 기울임</em>
+
+        <b>볼드체</b>
+        <i>이텔릭체</i>
+
+        <!-- ins 첨부하다, del 삭제하다, u 밑줄, strike 가운데줄-->
+        <!--ins랑 u랑 같고 del이랑 strike랑 보기에는 같음 기능은 틀림-->
+        <ins>추가하고 싶은 정보</ins>
+        <del>쓸모없는 정보나 관계없는 정보</del>
+
+        <u>밑줄 형태</u>
+        <strike>가운데줄 형태</strike>
+
+        <!-- sup 위첨자, sub 아래첨자-->
+        2<sup>2</sup> : 2의 2제곱
+        H<sub>2</sub>O :물에 대한 화학식
+
+        <!-- a anchor : 닻 -->
+        <a href="./index.html">버튼</a>
+
+        <!-- img image 이미지 -->
+        <!--넓이 높이 둘다 조정하면 이미지 꺠짐-->
+        <img src="./images/house.jpg" width="100px " />
+        <img src="./images/house.jpg" height="100px" />
+
+        <!-- table 도표 -->
+        <!-- table, tr, td -->
+
+        <style>
+            table,tr,td{
+                border: solid 1px black;
+            }
+        </style>
+        <!-- colspan, rowspan  열방향 늘리기, 행방향 늘리기 (오른쪽으로만 밀림) -->
+        <!-- thead, tbody, tfoot 머리, 몸통, 발 -->
+        <table summary="요약">
+            <caption>[도표1] 도표제목</caption>
+            <thead>
+                 <tr>
+                     <th scope="col">제목1</th>
+                     <th scope="col">제목2</th>
+                     <th scope="col">제목3</th>
+                     <th scope="col">제목4</th>
+                     <th scope="col">제목5</th>
+                 </tr>
+             </thead>
+            <tr> <!-- 1행 4열 -->
+                <td colspan="2">1</td> <!-- 가로로 2칸 사용하기 -->
+                <td rowspan="2">2</td> <!-- 세로로 2칸 사용하기 -->
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+
+            </tr>
+        </table>
+        
+        <br />
+
+        
+            <table>
+                <tr>
+                    <td colspan="5">up</td>
+                    
+                    <td colspan="3" rowspan="2" >right</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" colspan="2">left</td>
+                    <td colspan="3">center</td>
+                    
+                </tr>
+                <tr>
+                    
+                    <td colspan="6">down</td>
+                    
+                </tr>
+            </table>
+
     </body>
 </html>
