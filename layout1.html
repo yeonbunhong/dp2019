@@ -1,12 +1,15 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>레이아웃1</title>
-        <meta charset="utf-8"/>
+        <title>레이아웃1</title> 
+        <meta charset="utf-8"/> 
         <style>
             header, nav, div, footer, h1,h2,h3,ul,li,img{
                 /* border: solid 1px black; */
                 /* margin: 5px; */
+            }
+            header{
+                padding: 20px 70px; /* 상하 좌우 */
             }
             header>ul>li{
                 float: left; /* 둥둥떠다님 : 왼쪽기준; */
@@ -41,6 +44,7 @@
             }
             nav{
                 background-color: #eee;
+                padding: 20px 70px;
             }
             nav>ul{
                 padding: 0px;
@@ -67,14 +71,81 @@
             div>section:nth-child(4){
                 background-color: #ec5;
             }
+            div>section>div{
+                width: 1000px;
+                margin-left: auto; /* 오토는 자동 */
+                margin-right: auto; /* 오토는 자동 */
+                /* 가운데 정렬 */
+                /* 패딩은 오토가 없음 */
+            }
+            section{
+                padding: 50px 0px; /* 상하 좌우 */
+            }
             .content_part{
                 width: 480px;
+                float: left; /* 둥둥 떠다니도록 : 왼쪽기준 */
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin: 5px 10px; /* 상하 좌우 */ /* 위에 4줄 약식 띄어쓰기로 구분 */
             }
+            section>div>h3{
+                color: white;
+            }
+            dt{
+                margin: 15px 0px; /* 상하 좌우 */
+                font-weight: bold;
+            }
+            dd{
+                margin: 0px;
+            }
+            footer{
+                background-color: #333;
+                color: #aaa; /* 글자 색깔, 상속됨 (모든 게 상속되는 건 아님! */
+                padding: 20px 70px;
+            }
+
+            #navi_ul{
+                padding: 0px;
+            }
+            #navi_ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px; /* 상하 좌우 */ /* 아이디 부를때는 샾# 붙이기 */
+                border-right: solid 2px #aaa; /* 경계선 */
+            }
+            #navi_ul>li:nth-child(6){
+                border: none; /* 경계선: 없음; */
+            }
+
+            #icon_ul{
+                padding: 0px;
+            }
+            #icon_ul>li{
+                float: left;
+                list-style: none;
+                padding: 0px 10px; /* 상하 좌우 */ /* 아이디 부를때는 샾# 붙이기 */
+            }
+            #footer_left{
+                float: left;
+            }
+            #icon_ul{
+                float: right;
+            }
+            #wrap{
+                min-width: 1000px; /* 최소 가로 사이즈 : 1000px */
+                max-width: 1920px; /* 최대 가로 사이즈 : 1920px */ /* 너무 큰 화면에서는 옆에 여백으로 크기 고정 */
+                /* 1024*768, 1920*1080(FHD) */
+                margin: 0px auto; /* 상하 0px, 좌우 자동 */
+            }
+
         </style>
     </head>
 
     <body>
     <a href="index.html">돌아가기</a>
+    <!-- 코맨드 + F : 단어 찾기 -->
 
         <div id="wrap">
             <header>
@@ -107,6 +178,7 @@
             </nav>
             <div>
                 <section>
+                    <div>
                     <h3>Web Design</h3>
                     <div class="content_part">
                         <img src="images/layout1_img1.jpg" />
@@ -124,6 +196,7 @@
                             </dd>
                         </dl>
                     </div>
+                   
 
                     <div class="content_part">
                             <img src="images/layout1_img2.jpg" />
@@ -141,9 +214,12 @@
                                 </dd>
                             </dl>
                     </div>
+                    <div class="clear"></div>
+                </div>
                 </section>
 
                 <section>
+                    <div>
                     <h3>Icons</h3>
                     <div class="content_part">
                         <img src="images/layout1_img3.jpg" />
@@ -178,9 +254,13 @@
                                 </dd>
                             </dl>
                     </div>
+                    <div class="clear"></div>
+                </div>
                 </section>
+            
 
                 <section>
+                    <div>
                     <h3>illustrations</h3>
                     <div class="content_part">
                             <img src="images/layout1_img5.jpg" />
@@ -215,9 +295,12 @@
                                         </dd>
                                     </dl>
                             </div>
+                            <div class="clear"></div>
+                        </div>
                 </section>
 
                 <section>
+                    <div>
                         <h3>Miscellaneous</h3>
                         <div class="content_part">
                                 <img src="images/layout1_img7.jpg" />
@@ -252,40 +335,45 @@
                                         </dd>
                                     </dl>
                             </div>
+                            <div class="clear"></div>
+                            </div>
                 </section>
             </div>
+
             <footer>
-                <ul>
+                <div id="footer_left">
+                <ul id="navi_ul">
                     <li>Home</li>
                     <li>About</li>
                     <li>Services</li>
                     <li>Work</li>
                     <li>Blog</li>
                     <li>Contact us</li>
+                    <div class="clear"></div>
                 </ul>
-                <p>
-                    ⓒ 2013 BlueBox. All Right Reserved.
-                </p>
-                <p>
-                    the loges in the design are the property of their 
-                    respective owners/copyright holders.
-                </p>
-                <ul>
+                    <p>
+                        ⓒ 2013 BlueBox. All Right Reserved.
+                    </p>
+                    <p>
+                        the loges in the design are the property of their 
+                        respective owners/copyright holders.
+                    </p>
+                </div>
+                <ul id="icon_ul">
                     <li><img src="images/layout1_footer_icon1.png" /></li>
                     <li><img src="images/layout1_footer_icon2.png" /></li>
                     <li><img src="images/layout1_footer_icon3.png" /></li>
                     <li><img src="images/layout1_footer_icon4.png" /></li>
                     <li><img src="images/layout1_footer_icon5.png" /></li>
                     <li><img src="images/layout1_footer_icon6.png" /></li>
-
-
+                    <div class="clear"></div>
                 </ul>
+                <div class="clear"></div>
             </footer>
 
 
 
         </div>
-
 
     </body>
 </html>
