@@ -4,9 +4,11 @@
         <title>layout2</title>
             <meta charset="utf-8"  />
             <style>
+                /* css 입력하는 곳 */
                 header{
                     background-color: #02918c;
                     color: white; /* 글자색은 상속됩니다. */
+                    padding: 10px 50px;; /* 상하 좌우 */
                 }
                 header>h1>span:nth-child(2){
                     color: #cfc91d;
@@ -22,8 +24,14 @@
                 header>h1{
                     margin: 0px;
                 }
-                #wrap{
-                    
+                body{
+                    margin: 0px;
+                }
+                #wrap{  /* 무진장 커지거나 무진장 작아지는 거 방지 */ 
+                    min-width: 1000px;
+                    max-width: 1920px;
+                    margin-right: auto;
+                    margin-left: auto;  
                 }
                 .clear{
                     clear: both; /* float을 해제한다. */
@@ -69,19 +77,46 @@
                 }
                 section>h3{
                     color: #02918c;
+                    margin: 30px 0px; /* 상하 좌우 */
                 }
-                section li{
+                section>p{
+                    margin: 30px 0px; /* 상하 좌우 */ /* 가로로 되어있는 마진들은 겹치지 않음 (*상하만 겹침) */
+                    padding: 0px 100px; /* 상하 좌우 */ 
+                }
+                section>#about_list>li{
                     float: left; /* 가로로 줄 세우기 */
                     list-style: none;
                     width: 25%; /* 100 / 4 = 25 */
+                    width: calc(25% - (1px / 4 * 3) - 25px - 25px); /* calc 계산식 */
+
+                    border-right: solid 1px #ccc;
+                    padding: 25px;
                 }
-                section ul{
-                    padding: 0px;
+                section>#about_list>li:nth-child(4){
+                    border: none;
+                }
+                section #about_list{
+                    padding: 0px 80px; /* 상하 좌우 */
+
                 }
                 section dd{
                     margin: 0px;
                 }
-                
+                section>#work_list{
+                    padding: 0px;
+                    margin: 0px;
+                }
+                section>#work_list>li{
+                    float: left;
+                    list-style: none;
+                    width: 25%;
+                }
+                section>#work_list img{
+                    width: 100%; /* 내가 쓸 수 있는 공간 */
+                    display: inline; /* 기본 = 인라인 */
+                    display: block; /* 출력방식 블록 */
+                }
+                   
             </style>
         </head>
         <body>
@@ -125,7 +160,7 @@
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat duis aute irure dolor.
                     </p>
-                    <ul>
+                    <ul id="about_list">
                         <li>
                             <img src="images/layout2_icon1.jpg" />
                             <dl>
@@ -168,7 +203,24 @@
                         <div class="clear"></div>  
                     </ul>
                 </section>
-                <section>content2</section>
+                <section>
+                    <h3>MY WORK</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <ul id="work_list">
+                        <li><img src="images/layout2_pic1.jpg" /></li>
+                        <li><img src="images/layout2_pic2.jpg" /></li>
+                        <li><img src="images/layout2_pic3.jpg" /></li>
+                        <li><img src="images/layout2_pic4.jpg" /></li>
+                        <li><img src="images/layout2_pic5.jpg" /></li>
+                        <li><img src="images/layout2_pic6.jpg" /></li>
+                        <li><img src="images/layout2_pic7.jpg" /></li>
+                        <li><img src="images/layout2_pic8.jpg" /></li>
+                        <div class="clear"></div>
+                    </ul>
+                </section>
             </div>
         </body>
     </html>
